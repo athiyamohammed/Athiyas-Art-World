@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Athiya Khatun | Official Portfolio - Artist & Entrepreneur</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #F7F9F7;               
+            --card-bg: #FFFFFF;
+            --text-dark: #1C2B22;              
+            --text-muted: #536459;             
+            --accent-green: #3B6047;           
+            --accent-soft-green: #EBF2ED;      
+            --accent-highlight: #749C7B;       
+            --shadow: 0 10px 30px rgba(28, 43, 34, 0.05);
+            --shadow-hover: 0 18px 40px rgba(28, 43, 34, 0.12);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(247, 249, 247, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 1.2rem 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(59, 96, 71, 0.15);
+            transition: var(--transition);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: var(--text-dark);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.8rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--accent-green);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-green);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 85vh;
+            padding: 9rem 8% 4rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 4rem;
+        }
+
+        .hero-text { flex: 1; }
+
+        .tagline {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .hero-text h1 {
+            font-size: 3.4rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            margin-bottom: 2rem;
+            max-width: 540px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.85rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-green);
+            color: #FFF;
+        }
+
+        .btn-primary:hover {
+            background-color: #2D4B37;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(59, 96, 71, 0.25);
+        }
+
+        .btn-secondary {
+            border: 1px solid var(--accent-green);
+            color: var(--text-dark);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-soft-green);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 380px;
+            border-radius: 200px 200px 20px 20px;
+            box-shadow: 0 20px 40px rgba(28, 43, 34, 0.08);
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .hero-image img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 25px 50px rgba(28, 43, 34, 0.15);
+        }
+
+        /* Section Layouts */
+        section { padding: 6rem 8%; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.4rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .subsection-title {
+            font-size: 1.6rem;
+            margin: 2.5rem 0 1.5rem;
+            color: var(--accent-green);
+            border-bottom: 2px solid rgba(59, 96, 71, 0.15);
+            padding-bottom: 0.5rem;
+        }
+
+        /* Card Grid Layout */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .img-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: 1px solid rgba(59, 96, 71, 0.08);
+        }
+
+        .img-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        /* Flexible Image Card Styling */
+        .img-card img {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: contain;
+            background-color: #F0F4F1;
+            display: block;
+            transition: var(--transition);
+        }
+
+        .img-card:hover img {
+            transform: scale(1.03);
+        }
+
+        .img-card-body {
+            padding: 1.5rem;
+        }
+
+        .img-card-body h4 {
+            font-size: 1.15rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .img-card-body p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .badge-tag {
+            display: inline-block;
+            background: var(--accent-soft-green);
+            color: var(--accent-green);
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+            margin-bottom: 0.6rem;
+            text-transform: uppercase;
+        }
+
+        /* Video Embed & Shorts Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(59, 96, 71, 0.08);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background-color: #000;
+        }
+
+        .video-wrapper.shorts-wrapper {
+            padding-bottom: 125%; /* Vertical aspect ratio for Shorts/Reels */
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            transition: var(--transition);
+        }
+
+        .video-card-body {
+            padding: 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .link-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-green);
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .link-btn:hover {
+            color: #2D4B37;
+            transform: translateX(4px);
+        }
+
+        /* Timeline Layout */
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            background: var(--card-bg);
+            padding: 1.8rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent-green);
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .timeline-icon {
+            background: var(--accent-soft-green);
+            color: var(--accent-green);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1.2rem;
+            transition: var(--transition);
+        }
+
+        .timeline-item:hover .timeline-icon {
+            background: var(--accent-green);
+            color: #FFF;
+        }
+
+        /* Forever Business Banner */
+        .forever-banner {
+            background: linear-gradient(135deg, #1C2B22 0%, #0F1A13 100%);
+            color: #FFF;
+            border-radius: 24px;
+            padding: 3.5rem;
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            transition: var(--transition);
+        }
+
+        .forever-banner:hover {
+            box-shadow: 0 20px 40px rgba(15, 26, 19, 0.3);
+        }
+
+        .forever-text h2 { font-size: 2.2rem; color: #FFF; margin-bottom: 1rem; }
+        .forever-text p { color: #C1D0C6; margin-bottom: 1.8rem; }
+
+        /* Footer */
+        footer {
+            background-color: #121E17;
+            color: #FFF;
+            padding: 4rem 8% 2rem;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .social-links a {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            color: #FFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background: var(--accent-green);
+            transform: translateY(-4px) scale(1.1);
+        }
+
+        .copyright {
+            color: #83978A;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+
+        /* Scroll Reveal Soft Transition Class */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; text-align: center; padding-top: 7rem; }
+            .hero-text p { margin: 0 auto 2rem; }
+            .cta-buttons { justify-content: center; }
+            .forever-banner { flex-direction: column; padding: 2rem; text-align: center; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">Athiya Khatun</div>
+        <ul class="nav-links">
+            <li><a href="#artworks">Artworks</a></li>
+            <li><a href="#exhibitions">Exhibitions</a></li>
+            <li><a href="#videos">Podcasts & Media</a></li>
+            <li><a href="#certificates">Education & Awards</a></li>
+            <li><a href="#forever">Forever Business</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero reveal">
+        <div class="hero-text">
+            <span class="tagline">Award-Winning Artist • MSME Registered</span>
+            <h1>Athiya Khatun</h1>
+            <p>Celebrated award-winning artist, recipient of the Manikarnika Women's Kala Ratna Award 2026, certified international art educator, and a contemporary and passionate artist.</p>
+            <div class="cta-buttons">
+                <a href="#artworks" class="btn btn-primary"><i class="fa-solid fa-images"></i> View Artworks</a>
+                <a href="#videos" class="btn btn-secondary"><i class="fa-solid fa-play"></i> Watch Media & Features</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="1.jpg" alt="Athiya Khatun holding artwork">
+        </div>
+    </section>
+
+    <!-- Art Gallery Section -->
+    <section id="artworks" class="reveal" style="background-color: var(--accent-soft-green);">
+        <div class="section-header">
+            <h2>Featured Artworks Gallery</h2>
+            <p>A curated collection across portraiture, pencil illustrations, pattern designs, and fine art realism.</p>
+        </div>
+
+        <div class="card-grid">
+            <div class="img-card">
+                <img src="2.png" alt="High-contrast political and celebrity stencil portraits">
+                <div class="img-card-body">
+                    <span class="badge-tag">Pop Art & Stencils</span>
+                    <h4>Iconic Stencil Series</h4>
+                    <p>High-contrast, dual-tone pop art stencils featuring cultural, political, and cinema personalities.</p>
+                </div>
+            </div>
+
+            <div class="img-card">
+                <img src="3.png" alt="Detailed pencil sketches and nature studies">
+                <div class="img-card-body">
+                    <span class="badge-tag">Graphite & Pencil Art</span>
+                    <h4>Spiritual & Nature Studies</h4>
+                    <p>Fine-line sketches showcasing Ganesha iconography, flora, birds, aquatic life, and surrealism.</p>
+                </div>
+            </div>
+
+            <div class="img-card">
+                <img src="4.png" alt="Colorful pattern designs and peacock mandala">
+                <div class="img-card-body">
+                    <span class="badge-tag">Patterns & Mandalas</span>
+                    <h4>Geometric & Cultural Motifs</h4>
+                    <p>Vibrant pattern studies featuring organic foliage, tessellations, tricolor themes, and detailed peacocks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- National Exhibitions -->
+    <section id="exhibitions" class="reveal">
+        <div class="section-header">
+            <h2>Exhibitions & Press Highlights</h2>
+            <p>Prominent showcases across regional and national platforms.</p>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fa-solid fa-award"></i></div>
+                <div>
+                    <h3>Amaravati Chitrakala Veedhi — Guntur</h3>
+                    <p>Featured in headline coverage for contribution to street art carnivals and promoting fine art in Andhra Pradesh.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fa-solid fa-landmark"></i></div>
+                <div>
+                    <h3>Chitrakala Sanstha Exhibition — Vijayawada</h3>
+                    <p>Showcased original art pieces in national art exhibitions alongside esteemed regional artists.</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fa-solid fa-globe"></i></div>
+                <div>
+                    <h3>Manikarnika National Online Art Exhibition 2026</h3>
+                    <p>Participant and award winner in the prestigious national online art contest.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Embedded Podcasts & Media Section -->
+    <section id="videos" class="reveal" style="background-color: var(--accent-soft-green);">
+        <div class="section-header">
+            <h2>Podcasts & Media Coverage</h2>
+            <p>Features, interviews, and video highlights from regional Telugu media and personal creative channels.</p>
+        </div>
+
+        <!-- Media Features & Podcasts Subsection -->
+        <h3 class="subsection-title"><i class="fa-solid fa-microphone"></i> Media Features & Interviews</h3>
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/rqBhk3xbGM4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-card-body">
+                    <div>
+                        <span class="badge-tag">ART POINT OF VIEW</span>
+                        <h4>Amaravati Chitrakala Veedhi (Episode 5)</h4>
+                        <p>Special coverage featuring Mohammed Athiya Khatun at the Amaravati Chitrakala Veedhi art exhibition in Guntur.</p>
+                    </div>
+                    <a href="https://youtu.be/rqBhk3xbGM4" target="_blank" class="link-btn">Watch on YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/TJICqwBkTy4" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-card-body">
+                    <div>
+                        <span class="badge-tag">Telugu Podcast • Part 1</span>
+                        <h4>Athiya Muhammad — Bird Sanctuary Feature</h4>
+                        <p>First podcast feature interview in Telugu introducing her passion for bird conservation and fine art teachings.</p>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=TJICqwBkTy4" target="_blank" class="link-btn">Watch on YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/hUFBKQ9uD00" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-card-body">
+                    <div>
+                        <span class="badge-tag">Telugu Podcast • Part 2</span>
+                        <h4>Athiya Muhammad — Bird Poetry & Art Showcase</h4>
+                        <p>Second episode feature highlighting her original poetry, mandala artwork, and bird care initiatives.</p>
+                    </div>
+                    <a href="https://www.youtube.com/watch?v=hUFBKQ9uD00" target="_blank" class="link-btn">Watch on YouTube <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personal Channel & Reels Subsection -->
+        <h3 class="subsection-title" style="margin-top: 4rem;"><i class="fa-solid fa-clapperboard"></i> Channel Shorts & Creative Reels</h3>
+        <div class="video-grid">
+            <div class="video-card">
+                <div class="video-wrapper shorts-wrapper">
+                    <iframe src="https://www.youtube.com/embed/2yQGANyQNrg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-card-body">
+                    <div>
+                        <span class="badge-tag">YouTube Short</span>
+                        <h4>National & International Medals Reveal</h4>
+                        <p>Receiving and showcasing official medals and awards from national and international art competitions.</p>
+                    </div>
+                    <a href="https://youtube.com/shorts/2yQGANyQNrg" target="_blank" class="link-btn">Watch Short <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper shorts-wrapper">
+                    <iframe src="https://www.youtube.com/embed/GeXnKc6SoaM" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <div class="video-card-body">
+                    <div>
+                        <span class="badge-tag">YouTube Short</span>
+                        <h4>School Teaching & 3D Optical Illusion Art</h4>
+                        <p>Demonstrating creative perspective drawing and optical illusion techniques taught to school students.</p>
+                    </div>
+                    <a href="https://www.youtube.com/shorts/GeXnKc6SoaM" target="_blank" class="link-btn">Watch Short <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+
+            <div class="video-card">
+                <div class="video-wrapper shorts-wrapper" style="background: #1C2B22; display: flex; align-items: center; justify-content: center; text-align: center; color: #FFF; padding: 2rem;">
+                    <div>
+                        <i class="fa-brands fa-instagram" style="font-size: 3.5rem; color: #E1306C; margin-bottom: 1rem;"></i>
+                        <h4>Instagram Reel</h4>
+                        <p style="color: #C1D0C6; font-size: 0.85rem; margin-top: 0.5rem;">Watch exclusive art process & updates directly on Instagram.</p>
+                    </div>
+                </div>
+                <div class="video-card-body">
+                    <div>
+                        <span class="badge-tag">Instagram Reel</span>
+                        <h4>Featured Art Process Reel</h4>
+                        <p>Behind-the-scenes look into recent art creations and showcase highlights.</p>
+                    </div>
+                    <a href="https://www.instagram.com/reel/Dcnc98-Jg4C/" target="_blank" class="link-btn">View Reel on Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Complete Education, Awards & Certifications Section -->
+    <section id="certificates" class="reveal">
+        <div class="section-header">
+            <h2>Awards, Media & Government Certifications</h2>
+            <p>Comprehensive list of national art awards, press features, fine art certifications, and civic engagements.</p>
+        </div>
+
+        <!-- Subsection 1: Art Competitions & Awards -->
+        <h3 class="subsection-title"><i class="fa-solid fa-trophy"></i> Art Competitions & National Awards</h3>
+        <div class="card-grid" style="margin-bottom: 3rem;">
+            <div class="img-card">
+                <img src="cert-1.jpg" alt="1st Prize Certificate - Indian Art Contest">
+                <div class="img-card-body">
+                    <span class="badge-tag">1st Prize Winner</span>
+                    <h4>International Level Art & Craft Contest</h4>
+                    <p><strong>Organizer:</strong> Indian Art Contest (MSME Registered, Govt. of India)</p>
+                    <p>Recognized with 1st Prize for outstanding artistic execution.</p>
+                </div>
+            </div>
+
+            <div class="img-card">
+                <img src="cert-2.jpg" alt="Manikarnika Women's Kala Ratna Award 2026 Certificate">
+                <div class="img-card-body">
+                    <span class="badge-tag">Silver Award</span>
+                    <h4>Manikarnika Women’s Kala Ratna Award 2026</h4>
+                    <p><strong>Organizer:</strong> Manikarnika Art Gallery</p>
+                    <p>Awarded Silver Medal in the National Online Art Exhibition & Competition.</p>
+                </div>
+            </div>
+
+            <div class="img-card">
+                <img src="cert-3.jpg" alt="Future Star Artist Contest Certificate">
+                <div class="img-card-body">
+                    <span class="badge-tag">Silver Award</span>
+                    <h4>94th Future Star Artist Contest 2026</h4>
+                    <p><strong>Organizer:</strong> Manikarnika Art Gallery</p>
+                    <p>Honored with the Silver Award at the national level.</p>
+                </div>
+            </div>
+
+            <div class="img-card">
+                <img src="cert-4.jpg" alt="The Indian Art Fest Excellence Award Certificate">
+                <div class="img-card-body">
+                    <span class="badge-tag">Certified Excellence</span>
+                    <h4>The Indian Art Fest – Excellence Award</h4>
+                    <p><strong>Certificate ID:</strong> FINE-ART-0385</p>
+                    <p>Honored as a Certified Excellence / Creative Artist.</p>
+                </div>
+            </div>
+
+            <div class="img-card">
+                <img src="cert-5.jpg" alt="The Indian Art Fest Gold Medal Certificate">
+                <div class="img-card-body">
+                    <span class="badge-tag">Gold Medal</span>
+                    <h4>The Indian Art Fest – National Contest</h4>
+                    <p><strong>Certificate ID:</strong> TIAF-CCT-049777</p>
+                    <p>Awarded Gold Medal and Certificate of Appreciation.</p>
+                </div>
+            </div>
+
+            <div class="img-card">
+                <img src="cert-6.jpg" alt="TWAAS 4th Chithra Kala Santha Certificate">
+                <div class="img-card-body">
+                    <span class="badge-tag">Exhibition & Stall</span>
+                    <h4>TWAAS 4th Chithra Kala Santha</h4>
+                    <p><strong>Organizer:</strong> Dept. of Culture (Govt. of AP) & TWAAS</p>
+                    <p>Exhibited artworks and received participation honors at Vijayawada.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subsection 2: Media Features & Art Education -->
+        <h3 class="subsection-title"><i class="fa-solid fa-newspaper"></i> Media Features & Fine Art Training</h3>
+        <div class="card-grid" style="margin-bottom: 3rem;">
+            <div class="img-card">
+                <img src="mag-1.jpg" alt="Chithrakala e-Monthly Magazine Feature">
+                <div class="img-card-body">
+                    <span class="badge-tag">Featured Artist</span>
+                    <h4>Chithrakala e-Monthly Magazine (Aug 2026)</h4>
+                    <p><strong>Section:</strong> "Mana Chithrakarulu" (Our Artists) - Page 7</p>
+                    <p>Published feature of original Lord Rama pencil/ink artwork.</p>
+                </div>
+            </div>
+
+            <div class="img-card">
+                <img src="mag-2.jpeg" alt="Chithrakala e-Monthly Magazine Feature">
+                <div class="img-card-body">
+                    <span class="badge-tag">Featured Artist</span>
+                    <h4>Chithrakala e-Monthly Magazine (Sep 2026)</h4>
+                    <p><strong>Section:</strong> "Mana Chithrakarulu" (Our Artists) - Page 7</p>
+                    <p>Published feature of original Lord Rama pencil/ink artwork.</p>
+                </div>
+            </div>
+
+            <div class="img-card">
+                <img src="cert-8.jpg" alt="Portrait Sketching Certificate">
+                <div class="img-card-body">
+                    <span class="badge-tag">Course Completion</span>
+                    <h4>Portrait Sketching Course</h4>
+                    <p><strong>Institute:</strong> Noorjahan Art Institute</p>
+                    <p>Certified for technical excellence and mastery in realistic sketching.</p>
+                </div>
+            </div>
+
+            <div class="img-card">
+                <img src="cert-9.jpg" alt="Khula Aasmaan Art Contest Certificate">
+                <div class="img-card-body">
+                    <span class="badge-tag">Participation</span>
+                    <h4>Khula Aasmaan Art Contest</h4>
+                    <p><strong>Organizer:</strong> Art India Foundation & Indiaart</p>
+                    <p>Quarterly national art competition certificate of participation.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Subsection 3: National Government Quiz Certifications -->
+        <h3 class="subsection-title"><i class="fa-solid fa-certificate"></i> National & Civic Quiz Certifications</h3>
+        <div class="card-grid">
+            <div class="img-card">
+                <img src="cert-10.jpeg" alt="Our Census Our Pride Quiz Certificate">
+                <div class="img-card-body">
+                    <span class="badge-tag">Government of India</span>
+                    <h4>Our Census, Our Pride – Quiz Episode 1</h4>
+                    <p><strong>Authority:</strong> Office of the Registrar General & Census Commissioner, India & MyGov</p>
+                    <p>Awarded under the national CENSUS 2027 campaign.</p>
+                </div>
+            </div>
+
+            <div class="img-card">
+                <img src="cert-11.jpeg" alt="Anti-Drug Abuse Awareness Quiz Certificate">
+                <div class="img-card-body">
+                    <span class="badge-tag">Ministry of Education</span>
+                    <h4>Anti-Drug Abuse Awareness Quiz</h4>
+                    <p><strong>Authority:</strong> Ministry of Education (NCERT) & MyGov</p>
+                    <p>Recognized on International Day Against Drug Abuse & Illicit Trafficking.</p>
+                </div>
+            </div>
+
+            <div class="img-card">
+                <img src="cert-12.jpeg" alt="Kushal Bharat Viksit Bharat Quiz Certificate">
+                <div class="img-card-body">
+                    <span class="badge-tag">Skill Development</span>
+                    <h4>Kushal Bharat Viksit Bharat Quiz</h4>
+                    <p><strong>Authority:</strong> Ministry of Skill Development and Entrepreneurship & MyGov</p>
+                    <p>National initiative participation certificate.</p>
+                </div>
+            </div>
+
+            <div class="img-card">
+                <img src="cert-13.jpeg" alt="Weather Forecasting Quiz Certificate">
+                <div class="img-card-body">
+                    <span class="badge-tag">Earth Sciences</span>
+                    <h4>Weather Forecasting Quiz</h4>
+                    <p><strong>Authority:</strong> India Meteorological Department (IMD) & MyGov</p>
+                    <p>Commemorating 79 years of India's independence.</p>
+                </div>
+            </div>
+
+            <div class="img-card">
+                <img src="cert-14.jpeg" alt="Blue Economy and Fisheries Quiz Certificate">
+                <div class="img-card-body">
+                    <span class="badge-tag">Fisheries Dept</span>
+                    <h4>Blue Economy and Fisheries Quiz 2026</h4>
+                    <p><strong>Authority:</strong> Department of Fisheries (Ministry of Fisheries) & MyGov</p>
+                    <p>Civic participation in sustainable economy initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forever Business Section -->
+    <section id="forever" class="reveal">
+        <div class="forever-banner">
+            <div class="forever-text">
+                <span class="badge-tag" style="background: rgba(116, 156, 123, 0.25); color: #749C7B;">Entrepreneurship</span>
+                <h2>Wellness & Business Partnership</h2>
+                <p>Independent Business Owner with Forever Living Products, combining health, wellness, and business leadership.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="logo" style="color: #FFF;">Athiya Khatun</div>
+        <p style="color: #A3B5AA; margin-top: 0.5rem;">Artist • International Art Tutor • Forever Partner</p>
+
+        <div class="social-links">
+            <a href="https://www.youtube.com/@athiya999/shorts" target="_blank" title="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://www.instagram.com/reel/Dcnc98-Jg4C/" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:mohammedathiya@gmail.com" title="Email"><i class="fa-solid fa-envelope"></i></a>
+        </div>
+
+        <div class="copyright">
+            © 2026 Athiya Khatun. All Rights Reserved.
+        </div>
+    </footer>
+
+    <!-- JavaScript for Soft Scroll Animations -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealElements = document.querySelectorAll('.reveal');
+
+            const revealOnScroll = () => {
+                const windowHeight = window.innerHeight;
+                revealElements.forEach(el => {
+                    const elementTop = el.getBoundingClientRect().top;
+                    const revealPoint = 100;
+
+                    if (elementTop < windowHeight - revealPoint) {
+                        el.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            revealOnScroll(); // Initial check on load
+        });
+    </script>
+</body>
+</html>
