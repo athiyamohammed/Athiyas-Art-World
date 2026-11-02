@@ -324,7 +324,7 @@
         }
 
         .video-wrapper.shorts-wrapper {
-            padding-bottom: 125%; /* Vertical aspect ratio for Shorts/Reels */
+            padding-bottom: 125%;
         }
 
         .video-wrapper iframe {
@@ -403,6 +403,88 @@
         .timeline-item:hover .timeline-icon {
             background: var(--accent-green);
             color: #FFF;
+        }
+
+        /* Magazine Carousel Styling (Dedicated Section View) */
+        .carousel-outer-container {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .carousel-container {
+            position: relative;
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(59, 96, 71, 0.08);
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            max-height: 480px;
+            object-fit: contain;
+            background-color: #F0F4F1;
+            display: block;
+        }
+
+        .carousel-btn {
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            background: rgba(28, 43, 34, 0.7);
+            color: #FFF;
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .carousel-btn:hover {
+            background: var(--accent-green);
+        }
+
+        .prev-btn { left: 15px; }
+        .next-btn { right: 15px; }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1.2rem;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #CBD5E1;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .dot.active {
+            background: var(--accent-green);
+            width: 24px;
+            border-radius: 10px;
         }
 
         /* Forever Business Banner */
@@ -496,6 +578,7 @@
             <li><a href="#exhibitions">Exhibitions</a></li>
             <li><a href="#videos">Podcasts & Media</a></li>
             <li><a href="#certificates">Education & Awards</a></li>
+            <li><a href="#magazines">Magazine Features</a></li>
             <li><a href="#forever">Forever Business</a></li>
         </ul>
     </nav>
@@ -512,7 +595,7 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="1.JPG" alt="Athiya Khatun holding artwork">
+            <img src="1.jpg" alt="Athiya Khatun holding artwork">
         </div>
     </section>
 
@@ -714,8 +797,74 @@
         </div>
     </section>
 
+    <!-- Dedicated Magazine Carousel Showcase Section -->
+    <section id="magazines" class="reveal">
+        <div class="section-header">
+            <h2>Chithrakala e-Monthly Magazine Features</h2>
+            <p>Published features in "Mana Chithrakarulu" (Our Artists) showcasing original artworks across editions.</p>
+        </div>
+
+        <div class="carousel-outer-container">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="carousel-slide">
+                        <img src="mag-1.jpg" alt="Chithrakala e-Monthly Magazine Feature August 2026">
+                        <div class="img-card-body">
+                            <span class="badge-tag">Featured Artist</span>
+                            <h4>Chithrakala e-Monthly Magazine (Aug 2026)</h4>
+                            <p><strong>Section:</strong> "Mana Chithrakarulu" (Our Artists) - Page 7</p>
+                            <p>Published feature of original pencil and ink artwork.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="mag-2.jpeg" alt="Chithrakala e-Monthly Magazine Feature September 2026">
+                        <div class="img-card-body">
+                            <span class="badge-tag">Featured Artist</span>
+                            <h4>Chithrakala e-Monthly Magazine (Sep 2026)</h4>
+                            <p><strong>Section:</strong> "Mana Chithrakarulu" (Our Artists) - Page 7</p>
+                            <p>Published feature of original pencil and ink artwork.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="mag-3.jpeg" alt="Chithrakala e-Monthly Magazine Feature October 2026">
+                        <div class="img-card-body">
+                            <span class="badge-tag">Featured Artist</span>
+                            <h4>Chithrakala e-Monthly Magazine (Oct 2026)</h4>
+                            <p><strong>Section:</strong> "Mana Chithrakarulu" (Our Artists) - Page 10</p>
+                            <p>Featured showcase of original watercolor artwork.</p>
+                        </div>
+                    </div>
+
+                    <div class="carousel-slide">
+                        <img src="mag-4.jpeg" alt="Chithrakala e-Monthly Magazine Feature November 2026">
+                        <div class="img-card-body">
+                            <span class="badge-tag">Featured Artist</span>
+                            <h4>Chithrakala e-Monthly Magazine (Nov 2026)</h4>
+                            <p><strong>Section:</strong> "Mana Chithrakarulu" (Our Artists) - Page 16</p>
+                            <p>Featured showcase of traditional acrylic colors artwork.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Controls -->
+                <button class="carousel-btn prev-btn" aria-label="Previous Slide"><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="carousel-btn next-btn" aria-label="Next Slide"><i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <!-- Navigation Dots -->
+            <div class="carousel-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <span class="dot" data-index="3"></span>
+            </div>
+        </div>
+    </section>
+
     <!-- Complete Education, Awards & Certifications Section -->
-    <section id="certificates" class="reveal">
+    <section id="certificates" class="reveal" style="background-color: var(--accent-soft-green);">
         <div class="section-header">
             <h2>Awards, Media & Government Certifications</h2>
             <p>Comprehensive list of national art awards, press features, fine art certifications, and civic engagements.</p>
@@ -805,39 +954,9 @@
             </div>
         </div>
 
-        <!-- Subsection 2: Media Features & Art Education -->
-        <h3 class="subsection-title"><i class="fa-solid fa-newspaper"></i> Media Features & Fine Art Training</h3>
+        <!-- Subsection 2: Fine Art Training Certifications -->
+        <h3 class="subsection-title"><i class="fa-solid fa-newspaper"></i> Fine Art Training Certifications</h3>
         <div class="card-grid" style="margin-bottom: 3rem;">
-            <div class="img-card">
-                <img src="mag-1.jpg" alt="Chithrakala e-Monthly Magazine Feature">
-                <div class="img-card-body">
-                    <span class="badge-tag">Featured Artist</span>
-                    <h4>Chithrakala e-Monthly Magazine (Aug 2026)</h4>
-                    <p><strong>Section:</strong> "Mana Chithrakarulu" (Our Artists) - Page 7</p>
-                    <p>Published feature of original pencil and ink artwork.</p>
-                </div>
-            </div>
-
-            <div class="img-card">
-                <img src="mag-2.jpeg" alt="Chithrakala e-Monthly Magazine Feature">
-                <div class="img-card-body">
-                    <span class="badge-tag">Featured Artist</span>
-                    <h4>Chithrakala e-Monthly Magazine (Sep 2026)</h4>
-                    <p><strong>Section:</strong> "Mana Chithrakarulu" (Our Artists) - Page 7</p>
-                    <p>Published feature of original pencil and ink artwork.</p>
-                </div>
-            </div>
-
-            <div class="img-card">
-                <img src="mag-3.jpeg" alt="Chithrakala e-Monthly Magazine October 2026 Feature">
-                <div class="img-card-body">
-                    <span class="badge-tag">Featured Artist</span>
-                    <h4>Chithrakala e-Monthly Magazine (Oct 2026)</h4>
-                    <p><strong>Section:</strong> "Mana Chithrakarulu" (Our Artists) - Page 10</p>
-                    <p>Featured showcase of original watercolor artwork.</p>
-                </div>
-            </div>
-
             <div class="img-card">
                 <img src="cert-8.jpg" alt="Portrait Sketching Certificate">
                 <div class="img-card-body">
@@ -941,7 +1060,7 @@
         </div>
     </footer>
 
-    <!-- JavaScript for Soft Scroll Animations -->
+    <!-- JavaScript for Animations and Carousel -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const revealElements = document.querySelectorAll('.reveal');
@@ -959,7 +1078,45 @@
             };
 
             window.addEventListener('scroll', revealOnScroll);
-            revealOnScroll(); // Initial check on load
+            revealOnScroll();
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.querySelector('.carousel-track');
+            const slides = Array.from(track.children);
+            const prevBtn = document.querySelector('.prev-btn');
+            const nextBtn = document.querySelector('.next-btn');
+            const dots = document.querySelectorAll('.dot');
+            
+            let currentIndex = 0;
+
+            const updateCarousel = (index) => {
+                track.style.transform = `translateX(-${index * 100}%)`;
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+                currentIndex = index;
+            };
+
+            nextBtn.addEventListener('click', () => {
+                const nextIndex = (currentIndex + 1) % slides.length;
+                updateCarousel(nextIndex);
+            });
+
+            prevBtn.addEventListener('click', () => {
+                const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
+                updateCarousel(prevIndex);
+            });
+
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => updateCarousel(index));
+            });
+
+            // Auto-play slideshow every 5 seconds
+            setInterval(() => {
+                const nextIndex = (currentIndex + 1) % slides.length;
+                updateCarousel(nextIndex);
+            }, 5000);
         });
     </script>
 </body>
